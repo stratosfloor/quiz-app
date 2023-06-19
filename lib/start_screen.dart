@@ -23,14 +23,14 @@ class _StartScreenState extends State<StartScreen> {
           Image.asset(
             'assets/images/quiz-logo.png',
             width: 300,
-            color: const Color.fromARGB(255, 179, 152, 226),
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const SizedBox(height: 50),
           const StyledText(
               text: 'Learn Flutter the fun way!!!!',
               size: 26,
               color: Color.fromARGB(255, 220, 130, 236)),
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           OutlinedButton.icon(
             onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
