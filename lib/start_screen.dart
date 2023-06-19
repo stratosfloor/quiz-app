@@ -31,12 +31,14 @@ class _StartScreenState extends State<StartScreen> {
               size: 26,
               color: Color.fromARGB(255, 220, 130, 236)),
           const SizedBox(height: 50),
-          ElevatedButton(
+          OutlinedButton.icon(
             onPressed: startQuiz,
-            style: ElevatedButton.styleFrom(
-                textStyle: const TextStyle(fontSize: 16),
-                backgroundColor: const Color.fromARGB(255, 107, 15, 167)),
-            child: const Text('Start Quiz!'),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: const Color.fromARGB(255, 107, 15, 167),
+            ),
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz!'),
           )
         ],
       ),
