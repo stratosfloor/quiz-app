@@ -55,6 +55,7 @@ class _QuizState extends State<Quiz> {
                     )
                   : ResultScreen(
                       chosenAnswers: selectedAnswers,
+                      restartQuiz: switchScreen,
                     ),
         ),
       ),
