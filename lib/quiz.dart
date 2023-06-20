@@ -47,7 +47,7 @@ class _QuizState extends State<Quiz> {
           ),
           child: activeScreen == 'start'
               ? StartScreen(
-                  startQuiz: switchScreen,
+                  switchScreen: switchScreen,
                 )
               : activeScreen == 'quiz'
                   ? QuestionsScreen(
@@ -55,7 +55,7 @@ class _QuizState extends State<Quiz> {
                     )
                   : ResultScreen(
                       chosenAnswers: selectedAnswers,
-                      restartQuiz: switchScreen,
+                      switchScreen: switchScreen,
                     ),
         ),
       ),

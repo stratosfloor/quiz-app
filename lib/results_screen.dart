@@ -7,11 +7,11 @@ class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
     required this.chosenAnswers,
-    required this.restartQuiz,
+    required this.switchScreen,
   });
 
   final List<String> chosenAnswers;
-  final Function(String restart) restartQuiz;
+  final void Function(String restart) switchScreen;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -48,19 +48,20 @@ class ResultScreen extends StatelessWidget {
                   'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
               size: 26,
               color: const Color.fromARGB(255, 220, 81, 245),
+              centeredText: true,
             ),
             const SizedBox(height: 30),
             QuestionsSummary(summaryData: summaryData),
             const SizedBox(height: 30),
             OutlinedButton.icon(
               onPressed: () {
-                restartQuiz('quiz');
+                switchScreen('quiz');
               },
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: const Color.fromARGB(255, 107, 15, 167),
               ),
-              icon: const Icon(Icons.restart_alt),
+              icon: const Icon(Icons.refresh),
               label: const Text('Restart Quiz!'),
             )
           ],

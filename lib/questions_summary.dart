@@ -9,7 +9,7 @@ class QuestionsSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 400,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map(
@@ -19,24 +19,22 @@ class QuestionsSummary extends StatelessWidget {
                   Container(
                     width: 30,
                     height: 30,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: data['correct_answer'] == data['user_answer']
                           ? Colors.green
                           : Colors.red,
                     ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: StyledText(
-                        text: ((data['question_index'] as int) + 1).toString(),
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                    child: StyledText(
+                      text: ((data['question_index'] as int) + 1).toString(),
+                      size: 20,
+                      color: Colors.black,
                     ),
                   ),
                   Expanded(
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      margin: const EdgeInsets.only(left: 15),
                       decoration: const BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
@@ -46,12 +44,13 @@ class QuestionsSummary extends StatelessWidget {
                         ),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 5),
-                          Text(
-                            data['question'] as String,
-                            style: const TextStyle(
-                                color: Colors.white, fontSize: 16),
+                          StyledText(
+                            text: data['question'] as String,
+                            color: Colors.white,
+                            size: 16,
                           ),
                           const SizedBox(height: 5),
                           StyledText(
