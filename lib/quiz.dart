@@ -18,6 +18,7 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen(String screen) {
     setState(() {
+      if (screen == 'quiz') selectedAnswers = [];
       activeScreen = screen;
     });
   }
@@ -25,7 +26,6 @@ class _QuizState extends State<Quiz> {
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
-      selectedAnswers = [];
       switchScreen('results');
     }
   }

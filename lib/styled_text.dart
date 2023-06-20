@@ -11,10 +11,13 @@ class StyledText extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return (Text(text,
-        style: GoogleFonts.lato(
-          color: color,
-          fontSize: size,
-        )));
+    return (Text(
+      text,
+      textAlign: TextAlign.center,
+      style: GoogleFonts.lato(
+        color: color,
+        fontSize: size,
+      ),
+    ));
   }
 }
